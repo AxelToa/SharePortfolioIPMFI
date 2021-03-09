@@ -39,6 +39,8 @@ public abstract class Action {
     }
 
     public Action(String nom) {
+        if(nom == null)
+            throw new NullPointerException("Le nom ne peut pas être nul !");
         this.nom = nom;
     }
 
