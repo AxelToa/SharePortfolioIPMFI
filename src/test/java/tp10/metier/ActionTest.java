@@ -7,6 +7,8 @@ package tp10.metier;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import tp.metier.Action;
+import tp.metier.Jour;
 
 /**
  *
@@ -17,8 +19,17 @@ public class ActionTest {
     public ActionTest() {
     }
 
-    @org.junit.jupiter.api.Test
-    public void testSomeMethod() {
+    @Test
+    public void testConstructorGetNomSame() {
+        final String nom = "Starbucks";
+
+        Action action = new Action(nom) {
+            @Override
+            public float valeur(Jour j) {
+                throw new UnsupportedOperationException("Not supported yet.");
+            }
+        };
+
+        assertSame(nom, action.getNom());
     }
-    
 }
